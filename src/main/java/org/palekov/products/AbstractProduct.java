@@ -1,18 +1,26 @@
 package org.palekov.products;
 
+import org.palekov.util.BankCurrency;
+
 import java.math.BigDecimal;
-import java.util.Currency;
 
 public abstract class AbstractProduct {
-    private Currency currency;
-    private BigDecimal balance;
-    private String name;
+    protected BankCurrency currency;
+    protected BigDecimal balance;
+    protected String name;
+
+    public AbstractProduct() {
+    }
+
+    public AbstractProduct(String name) {
+        this.name = name;
+    }
 
     public BigDecimal replenishment(BigDecimal value) {
         return balance.add(value);
     }
 
-    public Currency getCurrency() {
+    public BankCurrency getCurrency() {
         return currency;
     }
 

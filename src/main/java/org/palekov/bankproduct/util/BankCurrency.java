@@ -1,4 +1,4 @@
-package org.palekov.util;
+package org.palekov.bankproduct.util;
 
 public enum BankCurrency {
     RUB,

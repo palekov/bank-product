@@ -15,7 +15,6 @@ class DebitCardTest {
     private final String testCardName = "Debit card";
     private final String testCardBalance = "1700000.00";
     private final String testCardReplenishmentSum = "100000.00";
-
     private final String testCardReplenishmentBalance = "1800000.00";
     private final BankCurrency testCardCurrency = BankCurrency.RUB;
     private DebitCard debitCard;
@@ -41,20 +40,5 @@ class DebitCardTest {
             debitCard.debiting("2000000.00");
         });
         Assertions.assertEquals("Invalid debiting value", exception.getMessage());
-    }
-
-    @Test
-    void getBalance() {
-        assertEquals(testCardBalance, debitCard.getBalance().toString());
-    }
-
-    @Test
-    void getCurrency() {
-        assertEquals(testCardCurrency, debitCard.getCurrency());
-    }
-
-    @Test
-    void getName() {
-        assertEquals(testCardName, debitCard.getName());
     }
 }

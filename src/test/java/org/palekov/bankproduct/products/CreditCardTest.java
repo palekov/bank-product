@@ -15,6 +15,7 @@ class CreditCardTest {
     private CreditCard creditCard;
 
     private final String testCardName = "Rouble credit card";
+    private final String invalidCardName = "Super-card №777";
     private final String testCardBalance = "1000.00";
     private final String zeroBalance = "0.00";
     private final int testCardInterestRate = 3;
@@ -38,6 +39,14 @@ class CreditCardTest {
     void debiting() {
         creditCard.debiting("1000.00");
         assertEquals(zeroBalance, creditCard.getBalance().toString());
+    }
+
+    @Test
+    void setNameExpectedException() {
+        IllegalArgumentException exception = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            creditCard.setName(invalidCardName);
+        });
+        Assertions.assertEquals("Invalid product name", exception.getMessage());
     }
 
     @Test

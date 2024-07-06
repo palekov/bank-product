@@ -9,17 +9,13 @@ public abstract class AbstractProduct {
     private String name;
     private BankCurrency currency;
     private BigDecimal balance;
+    private String namePattern = "^[a-z A-Z0-9]*$";
 
     protected AbstractProduct() {
     }
 
     protected AbstractProduct(String name) {
-        String namePattern = "^[a-z A-Z0-9]*$";
-        if (name.matches(namePattern)) {
-            this.name = name;
-        } else {
-            throw new IllegalArgumentException("Invalid product name");
-        }
+        this.setName(name);
     }
 
     public void replenishment(String value) {
@@ -43,7 +39,11 @@ public abstract class AbstractProduct {
     }
 
     protected void setName(String name) {
-        this.name = name;
+        if (name.matches(namePattern)) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Invalid product name");
+        }
     }
 
     protected void setCurrency(BankCurrency currency) {

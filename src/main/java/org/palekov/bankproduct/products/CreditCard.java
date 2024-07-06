@@ -4,7 +4,7 @@ import org.palekov.bankproduct.util.BankCurrency;
 
 import java.math.BigDecimal;
 
-public class CreditCard extends AbstractCard {
+public final class CreditCard extends AbstractCard {
 
     private final int interestRate;
 

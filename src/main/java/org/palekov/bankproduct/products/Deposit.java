@@ -5,7 +5,7 @@ import org.palekov.bankproduct.util.BankCurrency;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class Deposit extends AbstractProduct {
+public final class Deposit extends AbstractProduct {
 
     public Deposit(String name, String balance, BankCurrency currency) {
         super(name);

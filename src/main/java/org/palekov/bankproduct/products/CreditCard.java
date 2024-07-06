@@ -6,15 +6,19 @@ import java.math.BigDecimal;
 
 public class CreditCard extends AbstractCard {
 
-    private int interestRate;
+    private final int interestRate;
 
     public CreditCard(String name, String balance, int interestRate) {
         super(name, balance);
-        this.currency = BankCurrency.RUB;
+        this.setCurrency(BankCurrency.RUB);
         this.interestRate = interestRate;
     }
 
     public BigDecimal debitRequest() {
         return this.getBalance();
+    }
+
+    public int getInterestRate() {
+        return interestRate;
     }
 }

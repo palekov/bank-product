@@ -6,6 +6,6 @@ public class CurrencyDebitCard extends AbstractCard {
 
     public CurrencyDebitCard(String name, String balance, BankCurrency currency) {
         super(name, balance);
-        this.currency = currency;
+        this.setCurrency(currency);
     }
 }

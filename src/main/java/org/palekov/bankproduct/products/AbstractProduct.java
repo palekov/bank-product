@@ -6,15 +6,15 @@ import java.math.BigDecimal;
 
 public abstract class AbstractProduct {
 
-    protected String name;
-    protected BankCurrency currency;
-    protected BigDecimal balance;
+    private String name;
+    private BankCurrency currency;
+    private BigDecimal balance;
 
     protected AbstractProduct() {
     }
 
     protected AbstractProduct(String name) {
-        String namePattern = "^[a-zA-Z0-9]*$";
+        String namePattern = "^[a-z A-Z0-9]*$";
         if (name.matches(namePattern)) {
             this.name = name;
         } else {
@@ -40,5 +40,17 @@ public abstract class AbstractProduct {
 
     public String getName() {
         return this.name;
+    }
+
+    protected void setName(String name) {
+        this.name = name;
+    }
+
+    protected void setCurrency(BankCurrency currency) {
+        this.currency = currency;
+    }
+
+    protected void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 }

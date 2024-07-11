@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 
 public final class CreditCard extends AbstractCard {
 
-    private final int interestRate;
+    private final float interestRate;
 
-    public CreditCard(String name, String balance, int interestRate) {
+    public CreditCard(String name, String balance, float interestRate) {
         super(name, balance);
         this.setCurrency(BankCurrency.RUB);
         this.interestRate = interestRate;
@@ -18,7 +18,7 @@ public final class CreditCard extends AbstractCard {
         return this.getBalance();
     }
 
-    public int getInterestRate() {
+    public float getInterestRate() {
         return interestRate;
     }
 }

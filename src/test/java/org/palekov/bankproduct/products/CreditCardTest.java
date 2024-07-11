@@ -18,7 +18,7 @@ class CreditCardTest {
     private final String invalidCardName = "Super-card №777";
     private final String testCardBalance = "1000.00";
     private final String zeroBalance = "0.00";
-    private final int testCardInterestRate = 3;
+    private final float testCardInterestRate = 3.75F;
     @BeforeEach
     void setUp() {
         creditCard = new CreditCard(testCardName, testCardBalance, testCardInterestRate);
